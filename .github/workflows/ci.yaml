@@ -32,4 +32,5 @@ jobs:
         env:
           CHROME_HEADLESS: "true"
         run: |
+          export PYTHONPATH=$PWD
           pytest -v
