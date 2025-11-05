@@ -2,3 +2,4 @@ selenium>=4.0.0
 pytest
 pytest-html
 python-dotenv
+webdriver-manager
