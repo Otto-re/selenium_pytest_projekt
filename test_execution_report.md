@@ -1,103 +1,76 @@
-# ✅ Testausführung: GroceryMate
+# Testausführungsbericht – GroceryMate
 
-## 🔍 Funktion: Produktsuche
+## Produktsuche
 
 ### Testfall 1 – Produktsuche mit gültigem Schlüsselwort
-
-- **Testziel:** Produktsuche mit „Milch“ testen
-- **Eingabe:** Milch
-- **Erwartetes Ergebnis:** Liste mit passenden Produkten wird angezeigt
-- **Tatsächliches Ergebnis:** Liste wurde korrekt angezeigt
-- **Testergebnis:** ✅ Bestanden
+- **Ziel:** Überprüfung der Suchfunktion mit einem gültigen Begriff
+- **Eingabe:** „Milch“
+- **Erwartetes Ergebnis:** Es wird eine Trefferliste mit passenden Produkten angezeigt.
+- **Tatsächliches Ergebnis:** Trefferliste wird korrekt angezeigt.
+- **Status:** Bestanden
 - **Datum:** 06.06.2025
 - **Tester:** Otto Reifschneider
 
 ### Testfall 2 – Produktsuche mit ungültigem Schlüsselwort
-
-- **Testziel:** Überprüfung der Suchfunktion mit einem ungültigen Begriff („xyz123“)
-- **Eingabe:** xyz123
-- **Erwartetes Ergebnis:** Die Meldung „Keine Produkte gefunden“ wird angezeigt
-- **Tatsächliches Ergebnis:** Es wird **keine Meldung** angezeigt. Seite bleibt unverändert.
-- **Testergebnis:** ❌ Nicht bestanden
+- **Ziel:** Überprüfung der Reaktion auf einen Suchbegriff ohne Treffer
+- **Eingabe:** „xyz123“
+- **Erwartetes Ergebnis:** Eine Meldung wie „Keine Produkte gefunden“ wird angezeigt.
+- **Tatsächliches Ergebnis:** Keine Meldung. Seite bleibt unverändert.
+- **Status:** Nicht bestanden
 - **Datum:** 06.06.2025
 - **Tester:** Otto Reifschneider
 
 ### Testfall 3 – Produktsuche mit Sonderzeichen
-
-- **Testziel:** Eingabe ungültiger Sonderzeichen in der Produktsuche testen
-- **Eingabe:** !@#$%
-- **Erwartetes Ergebnis:** Meldung „Keine Produkte gefunden“ **oder** automatische Bereinigung der Eingabe
-- **Tatsächliches Ergebnis:** Keine Meldung, keine Reaktion. Seite bleibt unverändert.
-- **Testergebnis:** ❌ Nicht bestanden
-- **Datum:** 06.06.2025
-- **Tester:** Otto Reifschneider
-
-## 🛒 Funktion: Warenkorb
-
-### Testfall 4 – Einzelnes Produkt zum Warenkorb hinzufügen
-
-- **Testziel:** Überprüfen, ob ein Produkt in den Einkaufswagen gelegt werden kann
-- **Eingabe:** Klick auf „In den Warenkorb“ bei einem verfügbaren Produkt
-- **Erwartetes Ergebnis:** Produkt wird hinzugefügt, Zähler erhöht sich um 1
-- **Tatsächliches Ergebnis:** Verhalten wie erwartet
-- **Testergebnis:** ✅ Bestanden
+- **Ziel:** Überprüfung der Eingabebehandlung bei ungültigen Sonderzeichen
+- **Eingabe:** „!@#$%“
+- **Erwartetes Ergebnis:** Fehlermeldung oder Eingabesäuberung.
+- **Tatsächliches Ergebnis:** Keine Meldung. Seite bleibt unverändert.
+- **Status:** Nicht bestanden
 - **Datum:** 06.06.2025
 - **Tester:** Otto Reifschneider
 
 ---
 
-### Testfall 5 – Mehrere verschiedene Produkte zum Warenkorb hinzufügen
+## Warenkorb
 
-- **Testziel:** Gleichzeitiges Hinzufügen mehrerer Produkte überprüfen
-- **Eingabe:** Drei verschiedene Produkte in den Warenkorb legen
-- **Erwartetes Ergebnis:** Alle 3 Produkte sind im Warenkorb gelistet
-- **Tatsächliches Ergebnis:** Verhalten wie erwartet
-- **Testergebnis:** ✅ Bestanden
-- **Datum:** 06.06.2025
-- **Tester:** Otto Reifschneider
+### Testfall 4 – Einzelnes Produkt hinzufügen
+- **Ziel:** Sicherstellen, dass ein Produkt erfolgreich hinzugefügt werden kann.
+- **Erwartetes Ergebnis:** Produkt wird im Warenkorb angezeigt, Zähler erhöht sich.
+- **Tatsächliches Ergebnis:** Erwartetes Verhalten.
+- **Status:** Bestanden
 
-### Testfall 6 – Versuch, ein nicht vorrätiges Produkt in den Warenkorb zu legen
+### Testfall 5 – Mehrere unterschiedliche Produkte hinzufügen
+- **Ziel:** Überprüfung, ob mehrere Produkte korrekt übernommen werden.
+- **Erwartetes Ergebnis:** Alle hinzugefügten Produkte erscheinen im Warenkorb.
+- **Tatsächliches Ergebnis:** Erwartetes Verhalten.
+- **Status:** Bestanden
 
-- **Testziel:** Überprüfen, ob beim Hinzufügen eines Produkts mit Lagerbestand = 0 eine Fehlermeldung erscheint
-- **Eingabe:** Klick auf „In den Warenkorb“ bei einem Produkt mit Bestand 0
-- **Erwartetes Ergebnis:** Fehlermeldung wie „Dieses Produkt ist derzeit nicht verfügbar“
-- **Tatsächliches Ergebnis:** Test konnte nicht durchgeführt werden, da kein Produkt mit Lagerbestand = 0 existiert. Es scheint kein Limit beim Hinzufügen zu geben.
-- **Testergebnis:** 🚫 Nicht testbar
-- **Datum:** 06.06.2025
-- **Tester:** Otto Reifschneider
-
-## 🛒 Funktion: Checkout-Prozess
-
-### Testfall 7 – Erfolgreicher Checkout mit gültigen Daten
-
-- **Testziel:** Überprüfen eines vollständigen und gültigen Bestellvorgangs
-- **Eingabe:** Gültige Adress- und Zahlungsdaten eingegeben und bestätigt
-- **Erwartetes Ergebnis:** Bestellung wird aufgegeben, Bestätigungsnachricht wird angezeigt
-- **Tatsächliches Ergebnis:** Bestellung wird aufgegeben, aber **keine Bestätigungsnachricht** erscheint
-- **Testergebnis:** ⚠️ Teilweise bestanden
-- **Datum:** 06.06.2025
-- **Tester:** Otto Reifschneider
+### Testfall 6 – Produkt mit Lagerbestand = 0
+- **Ziel:** Prüfung der Fehlermeldung bei nicht verfügbarem Produkt.
+- **Erwartetes Ergebnis:** Meldung wie „Dieses Produkt ist nicht verfügbar“.
+- **Tatsächliches Ergebnis:** Kein Produkt mit Lagerbestand 0 verfügbar → nicht testbar.
+- **Status:** Nicht durchführbar
 
 ---
 
-### Testfall 8 – Bestellung mit Mindestbestellwert (1 €)
+## Checkout
 
-- **Testziel:** Überprüfung des Grenzwertes beim Mindestbestellwert
-- **Eingabe:** Bestellung mit genau 1 € Warenkorbwert
-- **Erwartetes Ergebnis:** Bestellung wird angenommen
-- **Tatsächliches Ergebnis:** Bestellung wird angenommen
-- **Testergebnis:** ✅ Bestanden
-- **Datum:** 06.06.2025
-- **Tester:** Otto Reifschneider
+### Testfall 7 – Gültiger Checkout
+- **Ziel:** Ordnungsgemäßer Bestellabschluss
+- **Erwartetes Ergebnis:** Bestellbestätigung wird angezeigt.
+- **Tatsächliches Ergebnis:** Bestellung wird ausgeführt, jedoch ohne sichtbare Bestätigungsnachricht.
+- **Status:** Teilweise bestanden
 
----
+### Testfall 8 – Mindestbestellwert (Grenzwerttest)
+- **Eingabe:** Warenkorbwert = 1 €
+- **Erwartetes Ergebnis:** Bestellung wird akzeptiert.
+- **Tatsächliches Ergebnis:** Erwartetes Verhalten.
+- **Status:** Bestanden
 
-### Testfall 9 – Bestellung mit ungültigen Zahlungsdaten
+### Testfall 9 – Ungültige Zahlungsdaten
+- **Ziel:** Validierung der Zahlungsprüfung
+- **Eingabe:** Abgelaufene/ungültige Kreditkarte
+- **Erwartetes Ergebnis:** Fehlermeldung zur Zahlung.
+- **Tatsächliches Ergebnis:** Bestellung wird trotzdem akzeptiert. Keine Validierung.
+- **Status:** Nicht bestanden
 
-- **Testziel:** Fehlermeldung bei ungültiger Kreditkarte simulieren
-- **Eingabe:** Abgelaufene oder ungültige Kreditkartendaten
-- **Erwartetes Ergebnis:** Fehlermeldung „Zahlung fehlgeschlagen. Bitte überprüfen Sie Ihre Angaben.“
-- **Tatsächliches Ergebnis:** Bestellung wird angenommen – **keine Prüfung auf Gültigkeit der Zahlungsdaten**
-- **Testergebnis:** ❌ Nicht bestanden
-- **Datum:** 06.06.2025
-- **Tester:** Otto Reifschneider
